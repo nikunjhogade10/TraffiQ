@@ -225,10 +225,9 @@ terraform apply -auto-approve
 
 ## 7. Project Team & Contributors
 
-* **Rajani Sangappa Sajjan**
-* **Nikunj Santosh Hogade**
-* **Adwait Pravin Kharade**
-* **Shriraj Omkar Salunke**
+* **Nikunj Santosh Hogade** ([@nikunjhogade10](https://github.com/nikunjhogade10))
+* **Adwait Pravin Kharade** ([@adwaitkharade546-bot](https://github.com/adwaitkharade546-bot))
+* **Shriraj Omkar Salunke** ([@salunkeshriraj-ops](https://github.com/salunkeshriraj-ops))
 * **Arayan Atul Londhe**
 
 **Affiliation**: Department of Computer Science & Engineering, MIT Art, Design and Technology University, Pune, Maharashtra, India.
