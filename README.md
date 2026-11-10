@@ -10,7 +10,6 @@
 [![AWS Lambda](https://img.shields.io/badge/AWS_Lambda-Python_3.11-ff9900.svg)](https://aws.amazon.com/lambda/)
 [![Amazon DynamoDB](https://img.shields.io/badge/Amazon_DynamoDB-Pay--Per--Request-4053D6.svg)](https://aws.amazon.com/dynamodb/)
 [![Terraform](https://img.shields.io/badge/Terraform-1.17_IaC-7B42BC.svg)](https://www.terraform.io/)
-[![License: Copyright Registered](https://img.shields.io/badge/Copyright_Act_1957-Form_XIV-D6A52A.svg)](TRAFFIQ_SOURCE_CODE_COPYRIGHT.md)
 
 ---
 
@@ -224,23 +223,20 @@ terraform apply -auto-approve
 
 ---
 
-## 7. Statutory Copyright Registration & Authorship
+## 7. Project Team & Contributors
 
-This software is registered under **Form XIV of the Indian Copyright Act, 1957 (Computer Software / Literary Work under Section 2(o))**.
-
-### Joint Authors & Project Team:
 * **Rajani Sangappa Sajjan**
 * **Nikunj Santosh Hogade**
 * **Adwait Pravin Kharade**
 * **Shriraj Omkar Salunke**
 * **Arayan Atul Londhe**
 
-**Affiliation**: Department of Computer Science & Engineering, MIT Art, Design and Technology University, Pune, Maharashtra, India.  
-**Complete Legal Dossier**: Refer to [`TRAFFIQ_SOURCE_CODE_COPYRIGHT.md`](TRAFFIQ_SOURCE_CODE_COPYRIGHT.md).
+**Affiliation**: Department of Computer Science & Engineering, MIT Art, Design and Technology University, Pune, Maharashtra, India.
 
 ---
 
-## 8. License & Attributions
-* Copyright © 2026 Rajani Sangappa Sajjan, Nikunj Santosh Hogade, Adwait Pravin Kharade, Shriraj Omkar Salunke, and Arayan Atul Londhe. All rights reserved.
+## 8. Attributions & References
+
+* Developed as an academic IoT and smart campus monitoring system for MIT-ADT University.
 * Third-party UI components derived from [shadcn/ui](https://ui.shadcn.com/) under the MIT License.
 * Map data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, rendered via [MapLibre GL JS](https://maplibre.org/).

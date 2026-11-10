@@ -2,10 +2,6 @@
 ================================================================================
 PROJECT: TraffiQ — MIT-ADT Campus Smart Traffic and Gate Monitoring System
 MODULE: AWS Lambda Cloud Telemetry Processor & Rule Evaluator
-COPYRIGHT: Copyright (c) 2026 — Authors: Rajani Sangappa Sajjan,
-           Nikunj Santosh Hogade, Adwait Pravin Kharade,
-           Shriraj Omkar Salunke, and Arayan Atul Londhe.
-           All Rights Reserved.
 PROJECT LOCATION: MIT Art, Design and Technology University, Rajbaug Campus,
                   Loni Kalbhor, Pune - 412201, Maharashtra, India
 ================================================================================
