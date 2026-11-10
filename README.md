@@ -1,4 +1,4 @@
-# 🚦 TraffiQ — MIT-ADT Campus Smart Traffic & Gate Monitoring System
+# TraffiQ — MIT-ADT Campus Smart Traffic & Gate Monitoring System
 
 > **An event-driven IoT and serverless cloud monitoring platform engineered for real-time traffic flow estimation, queue analytics, and gate ingress/egress management at MIT Art, Design and Technology University, Rajbaug Campus, Loni Kalbhor, Pune.**
 
@@ -14,7 +14,7 @@
 
 ---
 
-## 📌 1. Project Overview & Institutional Context
+## 1. Project Overview & Institutional Context
 
 **TraffiQ** is an academic IoT prototype and smart campus transit platform developed for **MIT-ADT University (Rajbaug Campus, Loni Kalbhor, Pune – 412201, Maharashtra, India)**.
 
@@ -27,7 +27,7 @@ The system monitors vehicle queuing and transit congestion on the primary approa
 
 ---
 
-## 🏗️ 2. End-to-End System Architecture
+## 2. End-to-End System Architecture
 
 ```mermaid
 flowchart TD
@@ -73,7 +73,7 @@ flowchart TD
 
 ---
 
-## 🔐 3. Dual-Mode Authentication & Gmail OTP Service
+## 3. Dual-Mode Authentication & Gmail OTP Service
 
 To ensure zero downtime during evaluations, research paper demonstrations, and academic vivas:
 
@@ -87,7 +87,7 @@ To ensure zero downtime during evaluations, research paper demonstrations, and a
 
 ---
 
-## 🎨 4. MIT-ADT Brand Identity & Visual Design
+## 4. MIT-ADT Brand Identity & Visual Design
 
 The UI implements a strict **4px spacing grid**, zero AI slop, calm typography, and the official university palette:
 
@@ -95,14 +95,14 @@ The UI implements a strict **4px spacing grid**, zero AI slop, calm typography, 
 * **Institutional Gold**: `#D6A52A` (TraffiQ logo `Q`, barrier accents, status indicators)
 * **Background Canvas**: `#F8FAFC` / `#FFFFFF` (Clean, high-legibility cards)
 * **Traffic Severity Spectrum**:
-  * 🟢 **Low Traffic**: `#16A34A` (Clear passage, free flow to NH 65)
-  * 🟠 **Moderate Traffic**: `#EA580C` (Steady barrier clearance, 3–5 min queue)
-  * 🔴 **Heavy Traffic**: `#DC2626` (Queuing before checkpoint, 8–12 min delay)
-  * ⚪ **Sensor Offline**: `#64748B` (Hardware failsafe mode)
+  * **Low Traffic**: `#16A34A` (Clear passage, free flow to NH 65)
+  * **Moderate Traffic**: `#EA580C` (Steady barrier clearance, 3–5 min queue)
+  * **Heavy Traffic**: `#DC2626` (Queuing before checkpoint, 8–12 min delay)
+  * **Sensor Offline**: `#64748B` (Hardware failsafe mode)
 
 ---
 
-## 📁 5. Repository Structure
+## 5. Repository Structure
 
 ```
 Traffic project/
@@ -110,7 +110,7 @@ Traffic project/
 │   ├── app/src/main/
 │   │   ├── AndroidManifest.xml
 │   │   └── res/               # Custom TraffiQ launcher icons & launch splash screens
-├── certs/                     # X.509 Device Certificates for AWS IoT Core mTLS
+│   ├── certs/                 # X.509 Device Certificates for AWS IoT Core mTLS (local only)
 ├── public/                    # Static campus assets & University imagery
 ├── scripts/
 │   └── generate_app_icons.py  # Pure-Python RGBA PNG icon & splash screen generator
@@ -144,7 +144,8 @@ Traffic project/
 │   ├── lambda_email.tf        # Email dispatcher Lambda & public Function URL
 │   ├── dynamodb.tf            # MITADT_Campus_Traffic_Telemetry table
 │   ├── sns.tf                 # MITADT_Campus_Gate_Alerts topic
-│   └── outputs.tf             # IoT endpoint, Function URL & ARNs
+│   ├── outputs.tf             # IoT endpoint, Function URL & ARNs
+│   └── terraform.tfvars.example # Safe variable configuration template
 ├── capacitor.config.ts        # Capacitor mobile packaging configuration
 ├── package.json               # Node.js dependencies & scripts
 ├── tsconfig.json              # TypeScript 5+ compiler configuration
@@ -153,7 +154,7 @@ Traffic project/
 
 ---
 
-## 🚀 6. Quick Start & Execution Guide
+## 6. Quick Start & Execution Guide
 
 ### Prerequisites
 * **Node.js**: `v18+` & `pnpm` (or `npm`)
@@ -223,7 +224,7 @@ terraform apply -auto-approve
 
 ---
 
-## 📄 7. Statutory Copyright Registration & Authorship
+## 7. Statutory Copyright Registration & Authorship
 
 This software is registered under **Form XIV of the Indian Copyright Act, 1957 (Computer Software / Literary Work under Section 2(o))**.
 
@@ -239,7 +240,7 @@ This software is registered under **Form XIV of the Indian Copyright Act, 1957 (
 
 ---
 
-## 📜 8. License & Attributions
+## 8. License & Attributions
 * Copyright © 2026 Rajani Sangappa Sajjan, Nikunj Santosh Hogade, Adwait Pravin Kharade, Shriraj Omkar Salunke, and Arayan Atul Londhe. All rights reserved.
 * Third-party UI components derived from [shadcn/ui](https://ui.shadcn.com/) under the MIT License.
 * Map data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, rendered via [MapLibre GL JS](https://maplibre.org/).
