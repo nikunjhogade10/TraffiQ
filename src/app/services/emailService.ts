@@ -26,7 +26,7 @@ export class EmailService {
   public async sendVerificationOtp(
     email: string,
     otp: string,
-    purpose: "SIGNUP" | "RESET" = "SIGNUP",
+    purpose: "SIGNUP" | "RESET" | "LOGIN" = "SIGNUP",
     name?: string
   ): Promise<SendOtpResult> {
     const cleanEmail = email.trim().toLowerCase();

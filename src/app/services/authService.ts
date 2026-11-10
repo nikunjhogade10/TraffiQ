@@ -35,8 +35,17 @@ const SEED_USERS: RegisteredUser[] = [
     id: "usr_staff_01",
     email: "staff@mitadt.edu.in",
     passwordHash: "Staff@123",
-    displayName: "Dr. Sandeep Kulkarni",
+    displayName: "Dr. Sandeep Kulkarni (Faculty)",
     role: "Staff",
+    isVerified: true,
+    createdAt: "2026-11-01T10:00:00Z",
+  },
+  {
+    id: "usr_nonteaching_01",
+    email: "nonteaching@mitadt.edu.in",
+    passwordHash: "Staff@123",
+    displayName: "Sunil Shinde (Administration & Operations)",
+    role: "Non-Teaching Staff",
     isVerified: true,
     createdAt: "2026-11-01T10:00:00Z",
   },
@@ -65,6 +74,18 @@ class AuthService {
       const existing = localStorage.getItem(USERS_STORAGE_KEY);
       if (!existing) {
         localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(SEED_USERS));
+      } else {
+        const parsed: RegisteredUser[] = JSON.parse(existing);
+        let updated = false;
+        for (const seed of SEED_USERS) {
+          if (!parsed.some((u) => u.email.toLowerCase() === seed.email.toLowerCase())) {
+            parsed.push(seed);
+            updated = true;
+          }
+        }
+        if (updated) {
+          localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(parsed));
+        }
       }
     } catch (err) {
       console.warn("Could not access localStorage for user database", err);
@@ -246,6 +267,63 @@ class AuthService {
       displayName: user.displayName,
       role: user.role,
       isVerified: user.isVerified,
+      token: `tq_jwt_${btoa(`${user.id}:${Date.now()}`)}`,
+      joinedAt: new Date().toLocaleTimeString("en-IN", {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
+
+    this.saveActiveSession(session);
+    return { success: true, session };
+  }
+
+  /**
+   * Authenticate a user via 6-digit OTP (passwordless login).
+   * Verifies the OTP, loads the user record (or auto-provisions for institutional accounts),
+   * and returns the authenticated UserSession.
+   */
+  public loginWithOtp(
+    email: string,
+    enteredOtp: string,
+    roleOverride?: UserRole
+  ): { success: boolean; error?: string; session?: UserSession } {
+    const cleanEmail = email.trim().toLowerCase();
+    const verifyResult = this.verifyOtp(cleanEmail, enteredOtp);
+    if (!verifyResult.success) {
+      return { success: false, error: verifyResult.error };
+    }
+
+    let user = this.findUserByEmail(cleanEmail);
+    if (!user) {
+      const role: UserRole =
+        roleOverride ||
+        (cleanEmail.includes("student")
+          ? "Student"
+          : cleanEmail.includes("nonteaching") || cleanEmail.includes("admin")
+          ? "Non-Teaching Staff"
+          : cleanEmail.includes("security") || cleanEmail.includes("gate")
+          ? "Campus Security"
+          : "Staff");
+
+      const reg = this.registerUser({
+        email: cleanEmail,
+        password: `Otp@${Date.now()}`,
+        role,
+      });
+      user = reg.user;
+    }
+
+    if (!user) {
+      return { success: false, error: "Could not create user session." };
+    }
+
+    const session: UserSession = {
+      type: "signed-in",
+      email: user.email,
+      displayName: user.displayName,
+      role: user.role,
+      isVerified: true,
       token: `tq_jwt_${btoa(`${user.id}:${Date.now()}`)}`,
       joinedAt: new Date().toLocaleTimeString("en-IN", {
         hour: "2-digit",

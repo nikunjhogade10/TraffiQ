@@ -42,10 +42,10 @@ export function LiveMapScreen({ navigate, trafficState }: LiveMapScreenProps) {
   const roadColor = isOffline
     ? "#94A3B8"
     : trafficState.trafficLevel === "Heavy Traffic"
-    ? "#DC2626"
-    : trafficState.trafficLevel === "Moderate Traffic"
-    ? "#D97706"
-    : "#059669";
+      ? "#DC2626"
+      : trafficState.trafficLevel === "Moderate Traffic"
+        ? "#D97706"
+        : "#059669";
 
   // Initialize MapLibre GL JS instance
   useEffect(() => {
@@ -382,10 +382,7 @@ export function LiveMapScreen({ navigate, trafficState }: LiveMapScreenProps) {
           </button>
         )}
 
-        {/* Attribution Badge */}
-        <div className="absolute right-2 bottom-1 z-10 px-1.5 py-0.5 rounded text-[8.5px] font-medium bg-white/80 text-slate-500">
-          © OpenStreetMap contributors
-        </div>
+
       </div>
 
       {/* ── Unified Bottom Navigation Bar ── */}
