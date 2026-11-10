@@ -1,0 +1,85 @@
+# ========================================================
+# TraffiQ - Git Ignore Rules
+# Strictly prevents leaking credentials, secrets, or builds
+# ========================================================
+
+# Environment & Secret Variables
+.env
+.env.*
+*.env
+*.env.local
+
+# Terraform Secrets, Variables & State
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+terraform/*.tfvars
+terraform/*.tfvars.json
+*.tfstate
+*.tfstate.*
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/.terraform/
+.terraform/
+terraform/tfplan*
+tfplan*
+terraform/dist/
+
+# Cryptographic Keys & Device Certificates
+certs/
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+*.keystore
+*.jks
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node / Web dependencies & build outputs
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Android build artifacts, local SDK paths & generated binaries
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+*.apk
+*.aab
+
+# Editor & OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Agent scratch / cache folders
+.agent/
+.agents/
+.claude/
+.gemini/
+.gsd/

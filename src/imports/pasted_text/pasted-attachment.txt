@@ -1,0 +1,265 @@
+screen2
+Create the second screen for the TRAFFIQ mobile app: “Select Gate and Traffic View”.
+
+This screen opens after Login or Continue as Guest.
+
+Use the same visual design system as the login screen: 390 × 844 mobile frame, light background, dark navy typography, cyan/teal primary accent, rounded cards, and clear hierarchy.
+
+Screen content:
+- Top app bar with back arrow and title: “Choose a Gate”
+- Supporting text: “Select a campus gate to view live traffic.”
+- A dropdown field labeled “Select Gate”
+- Default dropdown value: “Main Campus Gate”
+- Dropdown options:
+  1. Main Campus Gate
+  2. North Gate — Coming Soon
+  3. South Gate — Coming Soon
+  4. Hostel Gate — Coming Soon
+- Disable future gates but keep them visible
+- Add a large traffic summary card for the selected gate:
+  - Gate name: “Main Campus Gate”
+  - Current status: “Heavy Traffic”
+  - Number of vehicles detected: “26 vehicles”
+  - Vehicle activity: “High”
+  - Last updated: “1 minute ago”
+- Add three small statistic cards:
+  - “Vehicles: 26”
+  - “Queue: Long”
+  - “Rain: Detected”
+- Add a primary button: “View Gate Traffic”
+- Add a secondary text link: “View All Gates”
+
+Interactions:
+- Tapping the dropdown opens an overlay menu.
+- Selecting “Main Campus Gate” updates the summary card.
+- Tapping “View Gate Traffic” opens the Home Dashboard.
+- Tapping “View All Gates” opens a gate comparison screen.
+- If a future gate is selected, show: “This gate will be available in a future update.”
+- Keep the number of detected vehicles prominent, but label it as sensor-estimated rather than exact camera counting.
+screen3
+Create the third screen for the TRAFFIQ mobile app: the main traffic dashboard.
+
+This screen opens after the user selects “Main Campus Gate” and taps “View Gate Traffic”.
+
+Use the existing TRAFFIQ visual style from the current design: clean white cards, dark navy text, cyan/teal accent, strong traffic-status visuals, and compact bottom navigation.
+
+Screen content:
+- Header: “Good morning, Adwait”
+- Notification bell
+- Gate selector showing: “Main Campus Gate”
+- Large circular traffic indicator showing:
+  - “26”
+  - “VEHICLES DETECTED”
+- Status label: “HEAVY TRAFFIC”
+- Status description: “Traffic outside the main campus gate is high.”
+- Recommendation card: “Please wait before leaving.”
+- Secondary information:
+  - “Rain detected”
+  - “College bus movement detected”
+  - “Updated 1 minute ago”
+- Add a horizontal traffic bar:
+  - Low
+  - Moderate
+  - Heavy
+- Add buttons:
+  - “View Live Map”
+  - “View Alerts”
+- Add bottom navigation:
+  - Home
+  - Live Map
+  - Alerts
+  - Analytics
+  - Profile
+
+Interactions:
+- Gate selector returns to Gate Selection.
+- “View Live Map” opens the Map screen.
+- “View Alerts” opens the Critical Alert screen.
+- Bottom navigation opens the related screens.
+- Make the vehicle count and traffic status the most visually prominent elements.
+screen4
+Create the fourth screen for the TRAFFIQ mobile app: “Live Map”.
+
+Show a Google Maps-style map centered on MIT-ADT University campus and the roads immediately outside the Main Campus Gate. Do not use cameras and do not show exact individual vehicle tracking.
+
+Use:
+- Light map background
+- Blue campus boundary
+- Campus roads and surrounding streets
+- Marker labeled “Main Campus Gate”
+- Small Raspberry Pi marker labeled “Live Sensor Node”
+- Shaded circle labeled “Sensor Monitoring Zone”
+- Red highlighted road segment outside the gate for heavy traffic
+- Written traffic labels with icons, not color alone
+
+Add a bottom sheet:
+- “Main Campus Gate”
+- “Heavy Traffic”
+- “26 vehicles detected”
+- “Rain detected”
+- “College bus movement detected”
+- “Estimated delay: 10–15 minutes”
+- “Recommendation: Wait before leaving”
+- “Updated 1 minute ago”
+
+Add map controls:
+- Zoom in
+- Zoom out
+- Current location
+- Refresh status
+- Select Gate
+
+Add traffic legend:
+- Green: Low Traffic
+- Orange: Moderate Traffic
+- Red: Heavy Traffic
+
+Interactions:
+- Tapping the Main Campus Gate marker opens the bottom sheet.
+- Tapping the bottom sheet opens Gate Traffic Details.
+- Tapping Select Gate returns to Gate Selection.
+- Tapping Refresh Status shows a loading indicator and then updates the timestamp.
+- Make the map clearly communicate that the traffic condition comes from fixed PIR and ultrasonic sensors connected to Raspberry Pi, not camera footage.
+screen5
+Create a fifth screen called “Gate Traffic Details” for the TRAFFIQ app.
+
+This screen opens when the user taps the Main Campus Gate marker or the map bottom sheet.
+
+Show:
+- Header: “Main Gate Details”
+- Gate name: “MIT-ADT Main Campus Gate”
+- Status: “Heavy Traffic”
+- Vehicles detected: “26”
+- Motion activity: “High”
+- Vehicle distance estimate: “35 cm”
+- Rain status: “Detected”
+- College bus movement: “Detected”
+- Last update: “1 minute ago”
+- Estimated delay: “10–15 minutes”
+- Recommendation: “Wait before leaving”
+
+Add a simple horizontal timeline:
+- 4:10 PM — Moderate
+- 4:20 PM — Heavy
+- 4:30 PM — Heavy
+
+Add buttons:
+- “Back to Map”
+- “View Traffic History”
+- “Set Alert Preference”
+
+Add note:
+“Traffic values are estimated from fixed sensors at the gate and are not camera-based.”
+
+Create a sixth screen called “Critical Alert” for the TRAFFIQ mobile app.
+
+This screen opens when the system detects heavy traffic or when the user taps an alert notification.
+
+Use a light red/pink alert background area with a strong warning icon, but maintain accessible contrast.
+
+Show:
+- Alert icon
+- Heading: “Heavy Traffic Detected”
+- Large count: “26 vehicles”
+- Message: “Traffic outside the main campus gate is currently heavy.”
+- Conditions:
+  - Rain detected
+  - College bus movement detected
+  - Vehicle activity high
+- Recommendation: “Please wait before leaving the campus.”
+- Estimated delay: “10–15 minutes”
+- Updated: “1 minute ago”
+
+Buttons:
+- “View Live Traffic”
+- “Dismiss Alert”
+
+Add a secondary action:
+- “Notify me when traffic reduces”
+
+Interactions:
+- View Live Traffic opens the Live Map.
+- Notify me when traffic reduces opens notification settings.
+- Dismiss Alert returns to the Home Dashboard.
+screen6
+Create a seventh screen called “Alerts” for the TRAFFIQ app.
+
+Show a list of traffic notifications with timestamps and read/unread states.
+
+Sample alerts:
+1. “Heavy traffic outside the campus gate.”
+2. “Rain detected near the gate.”
+3. “College bus movement detected.”
+4. “Traffic is reducing; you may leave shortly.”
+5. “Sensor data updated successfully.”
+
+Each alert should show:
+- Icon
+- Title
+- Short description
+- Time
+- Read/unread indicator
+
+Add:
+- “Mark all as read”
+- “Notification Settings”
+
+Empty state:
+- “You’re all caught up”
+- “New traffic alerts will appear here.”
+
+Interactions:
+- Tapping a heavy-traffic alert opens Critical Alert.
+- Tapping a normal update opens Gate Traffic Details.
+Create an eighth screen called “Analytics” for the TRAFFIQ mobile app.
+
+Show traffic history for the selected “Main Campus Gate”.
+
+Include:
+- Date selector
+- Gate dropdown
+- Total vehicles detected
+- Peak traffic time
+- Average waiting time
+- Heavy traffic periods
+- Rainy-period traffic comparison
+
+Use:
+- Line chart for traffic level over time
+- Bar chart for vehicle count
+- Status legend: Low, Moderate, Heavy
+
+Sample data:
+- 4:00 PM — 8 vehicles — Low
+- 4:15 PM — 14 vehicles — Moderate
+- 4:30 PM — 26 vehicles — Heavy
+- 4:45 PM — 22 vehicles — Heavy
+- 5:00 PM — 12 vehicles — Moderate
+
+Add a note:
+“Data is collected from the Raspberry Pi sensor node and stored in the AWS cloud.”
+
+Do not label charts as Series 1 or Data 1.
+
+Create a tenth screen called “Profile” for the TRAFFIQ mobile app.
+
+Show:
+- User avatar
+- Name: “Adwait”
+- Role: “Student”
+- University: “MIT-ADT University”
+- Selected gate: “Main Campus Gate”
+
+Menu items:
+- Personal Information
+- Notification Preferences
+- Security
+- Alert Threshold
+- Sensor Status
+- Dark Mode
+- Language
+- Help Center
+- About TRAFFIQ
+- Log Out
+
+Use the same visual style as the existing TRAFFIQ profile screen. Keep each row tappable with a clear icon and chevron.

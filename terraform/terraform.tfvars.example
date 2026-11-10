@@ -1,0 +1,15 @@
+# TraffiQ - Terraform Variables Template
+# Copy this file to `terraform.tfvars` and fill in your actual values.
+# NEVER commit `terraform.tfvars` or `*.tfstate` to source control!
+
+aws_region         = "ap-south-1"
+project_name       = "traffiq"
+environment        = "production"
+dynamodb_table_name = "MITADT_Campus_Traffic_Telemetry"
+iot_thing_name     = "mitadt-main-gate-rpi3-node"
+iot_topic          = "mitadt/campus/gate/main/telemetry"
+
+# Gmail SMTP Configuration for TraffiQ OTP Dispatcher Lambda
+gmail_sender_email = "your-email@gmail.com"
+gmail_app_password = "xxxx xxxx xxxx xxxx"
+

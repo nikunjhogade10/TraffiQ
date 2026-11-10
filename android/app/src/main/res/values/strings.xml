@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TraffiQ</string>
+    <string name="title_activity_main">TraffiQ</string>
+    <string name="package_name">com.mitadt.trafficmonitor</string>
+    <string name="custom_url_scheme">com.mitadt.trafficmonitor</string>
+</resources>
