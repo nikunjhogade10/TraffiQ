@@ -228,7 +228,7 @@ terraform apply -auto-approve
 * **Nikunj Santosh Hogade** ([@nikunjhogade10](https://github.com/nikunjhogade10))
 * **Adwait Pravin Kharade** ([@adwaitkharade546-bot](https://github.com/adwaitkharade546-bot))
 * **Shriraj Omkar Salunke** ([@salunkeshriraj-ops](https://github.com/salunkeshriraj-ops))
-* **Arayan Atul Londhe**
+* **Arayan Atul Londhe** ([@blackwinter332-source](https://github.com/blackwinter332-source))
 
 **Affiliation**: Department of Computer Science & Engineering, MIT Art, Design and Technology University, Pune, Maharashtra, India.
 
